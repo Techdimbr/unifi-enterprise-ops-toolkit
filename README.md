@@ -1,107 +1,62 @@
-# 🏛️ UniFi Enterprise Ops Toolkit (`PRJ-TECHDIM-PUBLIC-v1.0.0`)
+# 🌐 UniFi Enterprise Ops Toolkit
+## Toolkit Corporativo para Automação, Backup e Auditoria de Redes UniFi / UniFi OS (UDM-Pro / UDM-SE)
 
-<p align="center">
-  <img src="icone.svg" width="80" alt="TECHDIM Logo" />
-</p>
+![UniFi Enterprise Ops Toolkit](06_MIDIA/banner_oficial.png)
 
-<p align="center">
-  <a href="https://www.debian.org"><img src="https://img.shields.io/badge/OS-Debian%2013%20(Trixie%2FSid)-A81D33?style=flat-square&logo=debian&logoColor=white" alt="Debian 13" /></a>
-  <a href="https://www.python.org"><img src="https://img.shields.io/badge/Python-3.11%2B%20(Stdlib)-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python 3.11+" /></a>
-  <a href="04_INTELIGENCIA_DE_DESENVOLVIMENTO/adrs/ADR-0001-arquitetura-atomica.md"><img src="https://img.shields.io/badge/Architecture-Atomic%20Box-0052CC?style=flat-square" alt="Architecture" /></a>
-  <a href="05_VERSOES/git_templates/hooks/pre-commit"><img src="https://img.shields.io/badge/Zero%20Leaks-Verified-2ea44f?style=flat-square&logo=shield" alt="Zero Leaks" /></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License MIT" /></a>
-  <a href="https://cloud.google.com"><img src="https://img.shields.io/badge/Google%20Cloud-Ready-4285F4?style=flat-square&logo=googlecloud&logoColor=white" alt="Google Cloud Ready" /></a>
-  <a href="https://techdimbr.github.io/techdimbr/"><img src="https://img.shields.io/badge/GitHub%20Pages-Live%20Showcase-0969DA?style=flat-square&logo=github&logoColor=white" alt="GitHub Pages" /></a>
-</p>
+[![Padrão](https://img.shields.io/badge/Padr%C3%A3o-PRJ--TECHDIM--PUBLIC--v1.0.0-00E5FF.svg)](https://techdimbr.github.io/techdimbr/)
+[![Doutrina](https://img.shields.io/badge/Doutrina-KETHER__1-7C4DFF.svg)](https://www.techdim.com.br)
+[![Ecossistema](https://img.shields.io/badge/Hardware-Ubiquiti%20UniFi%20%7C%20UDM--Pro-006FFF.svg)](https://ui.com)
+[![Stack](https://img.shields.io/badge/Stack-Python%203%20%7C%20REST%20API-3776AB.svg)](https://www.python.org)
+[![Automação](https://img.shields.io/badge/Redes-VLAN%20Auto--Provisioning-00C853.svg)](README.md)
+[![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT%20Corporate-green.svg)](LICENSE)
 
-<p align="center">
-  <img src="06_MIDIA/banner_oficial.png" width="100%" alt="TECHDIM Banner" />
-</p>
-
-> **Propriedade:** TECHDIM INOVA SIMPLES (I.S.) · CNPJ: 61.933.926/0001-24  
-> **Doutrina:** Kether_1 · Central de Engenharia, Ciberdefesa e Governança Soberana  
-> **Identificador Canônico:** `PRJ-TECHDIM-PUBLIC-v1.0.0`
+> **Automação determinística para infraestruturas de rede Ubiquiti UniFi. Backup automatizado de configurações, provisionamento padronizado de VLANs corporativas segmentadas e monitoramento contínuo de integridade de switches, gateways e access points.**
 
 ---
 
-## 🇧🇷 Visão Geral (Português)
+## 🏛️ Visão Geral & Proposta de Valor
 
-O **Padrão Canônico TECHDIM GitHub Público** é o template de arquitetura corporativa para desenvolvimento open-source e B2B da TECHDIM. Ele estrutura sistemas como uma **Caixa-Preta Atômica** (organismo autocontido, offline-first e determinístico), garantindo que qualquer desenvolvedor ou auditor possa clonar, verificar a integridade matemática e executar a aplicação instantaneamente.
+Redes corporativas UniFi frequentemente sofrem com a falta de rotinas automáticas de backup externo e configurações manuais de VLANs propensas a falhas humanas de isolamento (ex.: dispositivos IoT ou convidados na mesma rede de servidores).
 
-### Destaques da Engenharia
-- **Filosofia de Caixa-Preta Atômica:** Ciclo de vida previsível em 7 diretórios numéricos canônicos (`00` a `06`).
-- **Prova Matemática de Integridade (AIDE/Tripwire):** Verificação SHA-256 nativa de scripts e manifestos via `00_AUDITORIA/verificar_integridade.sh`.
-- **Barreira Zero Leaks:** Hook pré-commit nativo que bloqueia envio acidental de arquivos `.env`, chaves privadas e tokens de nuvem.
-- **Prontidão Nativa para Agentes de IA:** Diretrizes universais em `AGENTS.md`, `GEMINI.md`, `CLAUDE.md` e `.agents/skills/`.
-- **Bootstrap Inteligente:** Inicialização instantânea (< 1s) para módulos em Python puro (stdlib) e isolamento automático em `.venv` quando dependências externas forem requeridas.
+O **UniFi Enterprise Ops Toolkit** automatiza o ciclo de vida da infraestrutura:
+1. **Backup Criptografado Programado:** Exporta arquivos de backup da controladora (`.unf`) diariamente com encriptação e envio para armazenamento seguro fora do equipamento.
+2. **Matriz de VLANs Padronizada:** Provisiona e valida a segregação de tráfego (Gerência, Corporativa, CFTV, IoT, Visitantes com isolamento L2/L3).
+3. **Auditoria de Saúde de Dispositivos:** Mapeia portas de switches com erros de CRC, access points sobrecarregados e detecta quedas em tempo quase real.
 
 ---
 
-## 🇺🇸 Executive Summary (English)
+## 🏗️ Topologia de Automação UniFi
 
-The **TECHDIM Canonical Standard for Public GitHub Repositories** is an enterprise-grade architectural blueprint designed to build software as an **Atomic Black Box** (self-contained, offline-first, and deterministic). Engineered for mission-critical reliability, it enforces a strict 7-tier decimal directory lifecycle (`00` through `06`) with native mathematical integrity checks and multi-agent AI orchestration.
-
----
-
-## 📐 Arquitetura Canônica / Directory Architecture
-
-```text
-unifi-enterprise-ops-toolkit/
-├── 00_AUDITORIA/                       # Rastreabilidade, checksums.sha256 e verificação AIDE
-├── 01_SOBRE_O_PROJETO/                 # Visão de negócio, dores resolvidas e diagramas
-├── 02_COMO_USAR/                       # Guias de instalação, manuais e scripts operacionais
-├── 03_APLICACAO/                       # Código-fonte executável (src/), testes (tests/) e assets
-├── 04_INTELIGENCIA_DE_DESENVOLVIMENTO/ # ADRs (Architecture Decision Records) e referências
-├── 05_VERSOES/                         # Histórico de releases, CHANGELOG e git templates/hooks
-├── 06_MIDIA/                           # Ativos visuais essenciais (banner_oficial.png)
-│
-├── .agents/skills/                     # Skills embutidas para agentes de IA
-├── .github/workflows/                  # CI/CD (testes automatizados e auditoria de segurança)
-├── .env.example                        # Template seguro de variáveis de ambiente
-├── project.json                        # Manifesto estruturado de metadados corporativos
-├── LEIA-ME.md                          # Manual técnico operacional (Uso Interno)
-├── README.md                           # Vitrine pública executiva bilíngue (GitHub)
-├── iniciar.sh / INICIAR.bat            # Lançadores multiplataforma com bootstrap automático
-└── LICENSE                             # Licença MIT aberta com termos institucionais
+```mermaid
+graph TD
+    CLI["UniFi Enterprise Ops CLI / Cron Service"] -->|Autenticação Segura Local / Cloud Key| Controller["UniFi Controller / UDM Pro API"]
+    Controller -->|Backup Diário .unf| Vault[("Storage Seguro / Backup Criptografado")]
+    Controller -->|Auditoria de Topologia| Devices["Switches, Gateways & APs Ubiquiti"]
+    Devices -->|Telemetria & Estatísticas| Analyzer["Analisador de Conformidade TECHDIM"]
+    Analyzer --> Alert["Alertas de Desconexão & Relatórios Executivos"]
 ```
 
 ---
 
-## 🚀 Como Executar / Quick Start
+## ⚡ Início Rápido
 
+### Comandos de Operação
 ```bash
 # 1. Clonar o repositório
-git clone https://github.com/Techdimbr/<nome-do-repositorio>.git
-cd <nome-do-repositorio>
+git clone https://github.com/Techdimbr/unifi-enterprise-ops-toolkit.git
+cd unifi-enterprise-ops-toolkit
 
-# 2. Verificar a integridade matemática dos arquivos críticos (AIDE/SHA-256)
-./00_AUDITORIA/verificar_integridade.sh
-
-# 3. Inicializar a aplicação (bootstrap inteligente automático)
+# 2. Inicializar o ambiente
 ./iniciar.sh
+
+# 3. Executar o inventário e auditoria simulada de topologia
+python3 03_APLICACAO/src/unifi_ops.py --demo
 ```
 
 ---
 
-## 🛡️ Segurança e Governança
-
-- **Verificação de Integridade:** Execute `./00_AUDITORIA/verificar_integridade.sh` para auditoria matemática via SHA-256.
-- **Zero Leaks:** Nunca versione o arquivo `.env`. Copie `.env.example` para `.env` e configure suas variáveis locais.
-- **Git Hooks:** Ative a barreira pré-commit executando `./05_VERSOES/git_templates/configurar_git.sh`.
-
----
-
-## 💼 Implantação Corporativa & Parcerias Estratégicas
-
-A **TECHDIM Inova Simples** fornece blueprints de código aberto e atua na implantação de arquiteturas avançadas de ciberdefesa, nuvem soberana e governança corporativa:
-
-- 🛡️ **Hardening & Ciberdefesa:** Blindagem de servidores Linux Debian, regras avançadas de nftables e contenção de endpoints.
-- ☁️ **Arquitetura Google Cloud (GCP):** Landing Zones soberanas, conectividade privada (VPC/IAP), Cloud Armor e CMEK.
-- 🤖 **IA Privada & RAG Corporativo:** Sistemas corporativos com Vertex AI e Gemini sem vazamento de dados confidenciais.
-- ⚖️ **Governança LGPD:** Auditorias automatizadas de bancos de dados, varredura de PII e emissão de relatórios de conformidade.
-
-### Contato Comercial & Canais Oficiais
-- 🌐 **Website Oficial:** [https://www.techdim.com.br](https://www.techdim.com.br)
-- 🚀 **Vitrine Interativa (GitHub Pages):** [https://techdimbr.github.io/techdimbr/](https://techdimbr.github.io/techdimbr/)
-- 📩 **Atendimento Corporativo:** `contato@techdim.com.br` / `reparafacilcampinas@gmail.com`
-- 🏢 **CNPJ:** `61.933.926/0001-24` — TECHDIM INOVA SIMPLES (I.S.) · Campinas/SP
+## 🛡️ Governança & Contato Corporativo
+- **Autor:** Deivis Írio Mayer (Kether_1)
+- **Entidade:** TECHDIM INOVA SIMPLES (I.S.) - ME · CNPJ 61.933.926/0001-24
+- **Website Oficial:** [https://www.techdim.com.br](https://www.techdim.com.br)
+- **Portal de Soluções:** [https://techdimbr.github.io/techdimbr/](https://techdimbr.github.io/techdimbr/)
